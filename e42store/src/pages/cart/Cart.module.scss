@@ -1,0 +1,167 @@
+/* =========================================
+   Cart Styles
+========================================= */
+.cart-table {
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 0;
+
+  p {
+    font-size: 16px;
+
+    &:nth-last-child(2) {
+      margin-bottom: 30px;
+    }
+  }
+
+  p.emptyCart {
+    margin-top: 100px;
+    font-size: 1.6vw;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 1.2vw;
+
+    thead {
+      border-top: 2px solid var(--color-blue-3set);
+      border-bottom: 2px solid var(--color-blue-3set);
+    }
+
+    th {
+      border: 1px solid #eee;
+    }
+
+    th,
+    td {
+      vertical-align: top;
+      text-align: left;
+      padding: 10px;
+      cursor: pointer;
+
+      img {
+        max-width: 270px; /* Maximum card width */
+        height: auto; /* Height adjusts to content */
+        min-height: 300px; /* Minimum card height */
+        margin-top: 20px; /* Spacing between cards */
+        object-fit: cover;
+
+      }
+
+      &.icons {
+        > * {
+          margin-right: 5px;
+          cursor: pointer;
+        }
+
+        .icon {
+          color: var(--color-orange);
+
+          &:hover {
+            color: var(--color-danger);
+          }
+        }
+      }
+    }
+
+    tr {
+      border-bottom: 1px solid #ccc;
+    }
+
+    tr:nth-child(even) {
+      background-color: #eee;
+    }
+  }
+
+  .summary {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+
+    .card {
+      margin-top: 1rem;
+      padding: 2rem;
+
+      .text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h3 {
+          color: var(--color-danger);
+        }
+      }
+
+      button {
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .pending {
+    color: var(--color-danger);
+    font-weight: 500;
+  }
+
+  .delivered {
+    color: var(--color-success);
+    font-weight: 500;
+  }
+
+  .shipped {
+    color: var(--color-blue-3set);
+    font-weight: 500;
+  }
+
+  .processing {
+    color: var(--color-light-blue-3set);
+    font-weight: 500;
+  }
+
+}
+
+.count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    background-color: var(--color-blue-sea-3set);
+    margin: 0;
+    border: none;
+  }
+
+  p {
+    margin: 10px;
+  }
+
+  & > * {
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  table {
+    th, td {
+      padding: 8px;
+    }
+  }
+
+  .count {
+    button {
+      background-color: var(--color-dark-gray);
+      width: 30px;
+      height: 30px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+}

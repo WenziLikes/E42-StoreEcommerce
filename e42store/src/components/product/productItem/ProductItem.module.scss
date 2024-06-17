@@ -1,0 +1,65 @@
+/* =========================================
+   Product Item
+========================================= */
+$gridImgHeight: 230px;
+$gridImgWidth: 100%;
+$listImgWidth: 400px;
+$listImgHeight: 280px;
+
+.productItem {
+  a {
+    // Reset margin in CustomLink for img
+    margin: 0;
+  }
+
+  .img {
+    display: flex;
+    justify-content: center;
+    width: $gridImgWidth;
+    height: $gridImgHeight;
+    overflow: hidden;
+    transition: height 1.2s ease;
+
+    &:hover {
+      height: 400px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      object-fit: cover;
+      border-top: 5px;
+      transition: transform 3s ease;
+
+      &:hover {
+        transform: scale(1.4);
+      }
+    }
+  }
+
+  .content {
+    margin: 10px 20px;
+
+    .details {
+      padding: 0 1rem;
+
+      p {
+        font-size: 2rem;
+        font-weight: 500;
+        color: var(--color-light-blue-3set);
+      }
+    }
+
+    .desc {
+      font-size: 1.2vw;
+    }
+
+    button {
+      display: block;
+      margin: 14px;
+      width: 30%;
+    }
+  }
+}

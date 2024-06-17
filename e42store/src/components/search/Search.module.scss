@@ -1,0 +1,33 @@
+/* =========================================
+   TSortAndSearch Styles
+========================================= */
+.search {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  input {
+    margin: 0;
+    outline: none;
+    box-shadow: none;
+  }
+
+  .input-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .input-container input {
+    padding-left: 30px; /* Adjust based on the icon size */
+    /* Add any other input styles here */
+  }
+
+  .input-container .icon {
+    position: absolute;
+    left: 10px; /* Adjust based on your preference */
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Ensures the icon does not block input interactions */
+    font-size: 16px; /* Adjust the icon size as needed */
+  }
+}

@@ -1,0 +1,86 @@
+/* =========================================
+   Footer styles
+========================================= */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  text-align: end;
+  margin-top: 30px;
+  height: 80px;
+  border-top: .5px solid rgba(47, 63, 68, 0.43);
+
+  p {
+    font-size: 1.2vw;
+    font-weight: 300;
+  }
+
+  span {
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+      font-size: 1.4vw;
+      font-weight: 300;
+    }
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .footer {
+    p {
+      font-size: 1.5vw;
+    }
+
+    span a {
+      font-size: 1.7vw;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .footer {
+    p {
+      font-size: 1.8vw;
+    }
+
+    span a {
+      font-size: 2vw;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    padding: 20px 0;
+
+    p {
+      font-size: 2vw;
+    }
+
+    span {
+      justify-content: center;
+      margin-top: 10px;
+
+      a {
+        font-size: 2.3vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    p {
+      font-size: 3vw;
+    }
+
+    span a {
+      font-size: 3.5vw;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+/* =========================================
+   Shopping Cart Styles
+========================================= */
+.shopping-cart {
+
+  a {
+    margin-left: 3rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    font-weight: 700;
+    color: var(--color-asfalt-3set);
+
+    &:hover {
+      color: var(--color-blue-3set);
+    }
+  }
+
+  p {
+    position: absolute;
+    top: -1.6rem;
+    right: -1.6rem;
+    font-weight: 500;
+  }
+
+  .menu-icon {
+    cursor: pointer;
+    font-size: 2vw;
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .shopping-cart {
+    a{
+      font-size: 3vw;
+    }
+    .menu-icon {
+      display: flex;
+      font-size: 8vw;
+      > * {
+        margin-left: 2rem;
+      }
+    }
+  }
+}

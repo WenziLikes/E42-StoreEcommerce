@@ -1,0 +1,144 @@
+/* =========================================
+   Product List Styles
+========================================= */
+$gridWidth: 28rem;
+$gridHeight: 36rem;
+$listHeight: 28rem;
+$maxListHeight: 32rem;
+$gridImgHeight: 230px;
+$gridImgWidth: 100%;
+$listImgWidth: 400px;
+$listImgHeight: 280px;
+
+/* Styles for the top of the list */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+
+  /* Icons at the top */
+  .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      cursor: pointer;
+      transition: all .3s ease;
+
+      &:hover {
+        color: var(--color-blue-3set);
+      }
+
+      &.active {
+        color: var(--color-light-blue-3set);
+      }
+    }
+
+    & > * {
+      margin-right: 7px;
+    }
+
+    /* Text Sorting Result */
+    p {
+      font-size: 16px;
+      margin-left: 12px;
+    }
+  }
+
+  /* Sorting Products */
+  .sort {
+    display: flex;
+    align-items: center;
+    margin-left: -350px;
+
+    label {
+      width: 30%;
+      font-size: 16px;
+      font-weight: 500;
+      margin: 0 5px;
+    }
+
+    select {
+      width: 200px;
+    }
+  }
+}
+
+/* Product */
+.bottom {
+  .product {
+    font-size: 3vw;
+    margin-top: 40px;
+    font-weight: 600;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .icons, .sort {
+      margin: 10px 0;
+    }
+
+    .sort {
+      margin-left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .bottom .product {
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .top {
+    .sort {
+      flex-direction: column;
+      align-items: flex-start;
+
+      label, select {
+        width: 100%;
+        margin: 5px 0;
+      }
+    }
+  }
+
+  .bottom .product {
+    font-size: 5vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .icons, .sort {
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    .sort {
+      flex-direction: column;
+      align-items: flex-start;
+
+      label, select {
+        width: 100%;
+        margin: 5px 0;
+      }
+    }
+  }
+
+  .bottom .product {
+    font-size: 6vw;
+  }
+}

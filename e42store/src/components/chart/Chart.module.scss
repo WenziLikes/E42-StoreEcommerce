@@ -1,0 +1,15 @@
+/* =========================================
+   Chart component
+========================================= */
+.charts {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 500px;
+
+  .card {
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-bottom: 3px solid var(--color-coffemilk-3set);
+    background-color: var(--bg-color);
+  }
+}

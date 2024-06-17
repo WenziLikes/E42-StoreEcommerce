@@ -1,0 +1,47 @@
+/* =========================================
+   Contact Page
+========================================= */
+.contact {
+  margin-top: 40px;
+  h1 {
+    position: absolute;
+    z-index: 0;
+    top: 36%;
+    font-size: 300px;
+    color: rgba(25, 149, 173, 0.09);
+  }
+
+  .content {
+    h2 {
+      color: var(--color-base1);
+    }
+
+    .block {
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 999;
+
+      .email {
+        cursor: pointer;
+        padding-left: 12px;
+        font-size: 18px;
+        font-weight: 500;
+        font-style: italic;
+        color: #01641b;
+        text-decoration: underline;
+      }
+
+      .contactIcon {
+        cursor: pointer;
+        font-size: 36px;
+        color: var(--color-base1);
+        margin-right: 18px;
+        margin-top: 2%;
+      }
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
+}

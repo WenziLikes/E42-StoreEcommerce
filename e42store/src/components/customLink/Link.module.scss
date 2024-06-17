@@ -1,0 +1,75 @@
+/* =========================================
+   CustomLink and CustomNavLink styles
+========================================= */
+
+.withBorder {
+  border-radius: 5px;
+  border: 1px solid var(--color-blue-3set);
+  padding: 0.5rem 1rem;
+}
+
+.link {
+  font-size: 1.3vw;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 700;
+  transition: color .8s ease;
+
+  &.active {
+    display: flex;
+    font-weight: 900;
+    text-transform: uppercase;
+    width: 25%;
+    cursor: pointer;
+    color: var(--color-light-blue-3set);
+    margin-left: -12px;
+    margin-bottom: 4px;
+    margin-top: 6px;
+    transition: color .8s ease;
+
+    span {
+      display: inline-block;
+    }
+
+    p {
+      display: flex; /* Displaying the p element when the class is active */
+      align-items: center;
+      margin: 0;
+      padding-left: 1px;
+      font-weight: 900;
+      color: var(--color-asfalt-3set);
+      /* Adding animation */
+      animation-name: fadeIn;
+      animation-duration: 2s;
+      animation-timing-function: ease-in-out;
+    }
+  }
+
+  &:hover {
+    color: var(--color-blue-3set);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media(max-width: 768px) {
+
+  .link {
+    p {
+      color: var(--color-light-blue-3set);
+    }
+
+    &.active {
+      margin-left: 40px;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+/* =========================================
+   View Product Styles
+========================================= */
+$table-background-color: var(--color-dark-blue-3set);
+$table-text-color: var(--color-white);
+$table-shadow-color: rgba(0, 0, 0, 0.15);
+$table-secondary-bg-color: #f3f3f3;
+$table-accent-color: #39b208;
+
+.view-products {
+  h2 {
+    span {
+      color: var(--color-blue-3set);
+    }
+  }
+
+  p {
+    margin: 10px;
+    font-size: 1.2vw;
+  }
+
+  p.not-found {
+    font-size: 4vw;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+  }
+}
+
+.table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 2em;
+  font-family: sans-serif;
+  min-width: 100%;
+  box-shadow: 0 0 20px $table-shadow-color;
+  overflow-x: auto;
+
+  .icon {
+    cursor: pointer;
+    color: var(--color-orange);
+
+    &:hover {
+      color: var(--color-danger);
+    }
+  }
+
+  thead tr {
+    background-color: $table-background-color;
+    color: $table-text-color;
+    text-align: left;
+  }
+
+  th, td {
+    padding: 12px 15px;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+
+  tbody tr:nth-of-type(even) {
+    background-color: $table-secondary-bg-color;
+  }
+
+  tbody tr:last-of-type {
+    border-bottom: 2px solid $table-accent-color;
+  }
+
+  tbody tr.active-row {
+    font-weight: bold;
+    color: $table-accent-color;
+  }
+}

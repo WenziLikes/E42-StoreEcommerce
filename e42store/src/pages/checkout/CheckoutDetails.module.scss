@@ -1,0 +1,20 @@
+/* =========================================
+   Checkout Page Style
+========================================= */
+.checkout {
+  margin: 0 auto;
+
+  form {
+    display: flex;
+    justify-content: space-between;
+
+    .card {
+      margin-left: 20px;
+      padding: 4rem;
+    }
+
+    .accordion {
+      width: 50%;
+    }
+  }
+}

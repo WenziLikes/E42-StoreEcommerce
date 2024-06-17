@@ -1,0 +1,240 @@
+/* =========================================
+   TSlider Styles
+========================================= */
+%transition_all_03s {
+  transition: all .3s ease;
+}
+
+%backface_visibility_hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.slider {
+  height: 86vh;
+
+  .bg-slider {
+    position: absolute;
+    z-index: -9;
+    width: 340px;
+    height: 120vh;
+    top: 41.7%;
+    left: 42%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(148, 148, 148, 0.16);
+  }
+}
+
+.swiper-container {
+  position: relative;
+  z-index: 500;
+  width: 100%;
+  height: 82vh;
+  transition: opacity .6s ease, transform .3s ease;
+
+  &:hover {
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: var(--color-blue-3set);
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: var(--color-blue-3set);
+  }
+}
+
+.swiper-slide {
+  overflow: hidden;
+  @extend %backface_visibility_hidden;
+
+  .slide-bgimg {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .entity-img {
+    display: none;
+  }
+
+  .content {
+    position: absolute;
+    top: 12%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-left: 5%;
+    color: var(--color-asfalt-3set);
+
+    .icon {
+      color: var(--color-blue-3set);
+    }
+
+    &-left {
+      .watch-now {
+        color: var(--color-asfalt-3set);
+        margin-top: 310px;
+        margin-left: -40px;
+        writing-mode: vertical-lr; /* Vertical text direction from left to right */
+        text-orientation: upright; /* Rotate text vertically (vertically) */
+        font-size: .9vw;
+        position: relative;
+        top: -10px;
+        left: 18px;
+        padding-left: 2px;
+        padding-bottom: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .5px;
+        transition: all 1s;
+
+        &:hover {
+          padding-bottom: 32px;
+          color: var(--color-blue-3set);
+        }
+      }
+
+      .caption {
+        width: 30%;
+      }
+    }
+
+    &-right {
+      position: absolute;
+      top: 30%;
+      right: 120px;
+      width: 320px;
+
+      a {
+        display: flex;
+        align-items: center;
+        margin-top: 60px;
+        font-size: 18px;
+        color: var(--color-blue-3set);
+
+        .icon {
+          margin-left: 26px;
+        }
+      }
+    }
+
+    .title {
+      font-size: 2.6em;
+      font-weight: bold;
+      width: 320px;
+    }
+
+    .sub-title {
+      color: rgba(47, 63, 68, 0.4);
+      font-style: italic;
+      font-size: 1.9em;
+      font-weight: 300;
+      transform: translateX(0);
+      transition: transform .7s ease;
+
+      &:hover {
+        transform: translateX(10px);
+      }
+    }
+
+    .caption {
+      display: block;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    &:hover {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+[class^="swiper-button-"] {
+  width: 44px;
+  opacity: 0;
+  visibility: hidden;
+  @extend %transition_all_03s;
+}
+
+.swiper-button-prev {
+  transform: translateX(50px);
+}
+
+.swiper-button-next {
+  transform: translateX(-50px);
+}
+
+@media (max-width: 800px) {
+  .slider {
+
+    .swiper-slide {
+      img {
+        width: 60vw;
+        top: 74%;
+      }
+    }
+
+    .bg-slider {
+      width: 92vw;
+      top: 50%;
+      left: 50%;
+    }
+
+    .swiper-container {
+      display: flex;
+      justify-content: right;
+      align-items: center;
+    }
+
+    .content {
+      &-left {
+        position: absolute;
+        top: 2%;
+        right: 18%;
+        width: 320px;
+
+        .watch-now {
+          margin-top: 280px;
+          margin-left: -80px;
+          font-size: 3.1vw;
+        }
+
+        .caption {
+          display: none;
+        }
+      }
+
+      &-right {
+        position: absolute;
+        top: 13%;
+        right: 50px;
+        width: 330px;
+
+        a {
+          display: flex;
+          align-items: center;
+          margin-top: 10px;
+          font-size: 18px;
+          //color: var(--color-blue-3set);
+
+          .icon {
+            margin-left: 26px;
+          }
+        }
+
+        .title {
+          display: none;
+        }
+      }
+    }
+  }
+}

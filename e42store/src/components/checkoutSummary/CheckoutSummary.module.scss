@@ -1,0 +1,36 @@
+/* =========================================
+   Checkout Summary
+========================================= */
+.checkout-summary {
+  p.no-item {
+    margin-left: 60px;
+    font-size: 1.4vw;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.2vw;
+  }
+
+  .card {
+    margin-bottom: 1rem;
+    padding: 2rem;
+    border: 1px solid var(--color-blue-3set);
+  }
+}
+
+h3 {
+  font-weight: 400;
+}
+
+.text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h3 {
+    font-size: 40px;
+    font-weight: 300;
+    color: var(--color-danger);
+  }
+}

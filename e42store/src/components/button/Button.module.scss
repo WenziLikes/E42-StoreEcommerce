@@ -1,0 +1,56 @@
+/* =========================================
+   Buttons
+========================================= */
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 14px 0;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--color-base1);
+  border: .5px solid var(--color-base1);
+  background-color: transparent;
+  cursor: pointer;
+  transition: all .8s ease;
+
+  img {
+    margin-right: .8rem;
+  }
+
+  &:hover {
+    background-color: var(--color-base1);
+    color: var(--color-white);
+    transform: translateX(1px);
+  }
+
+  &:disabled {
+    position: relative;
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.darkBlue {
+  color: var(--color-white);
+  background-color: var(--color-base1);
+
+  &:hover {
+    color: var(--color-base1);
+    background-color: transparent;
+  }
+}
+
+.noBackground {
+  border: none;
+  background-color: transparent;
+
+  &:hover {
+    color: var(--color-base1);
+    background-color: transparent;
+    border: .5px solid var(--color-base1);
+  }
+}

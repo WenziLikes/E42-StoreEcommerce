@@ -1,0 +1,132 @@
+//* =========================================
+//           Product Details Styles
+// ========================================= */
+
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+
+  .back-to {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    letter-spacing: .5px;
+    transition: padding-right 1s;
+
+    .icon {
+      color: var(--color-blue-3set);
+    }
+
+    &:hover {
+      // Additional hover styles if needed
+    }
+  }
+
+  .details {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .img-container {
+      position: relative;
+
+      .img {
+        position: relative;
+        cursor: pointer;
+
+        img {
+          width: 400px;
+          height: 400px;
+          object-fit: cover;
+        }
+
+        .zoom-lens {
+          position: absolute;
+          border: 1px solid #8b8b8b;
+          width: 100px;
+          height: 100px;
+          background: rgba(255, 255, 255, 0.3);
+          display: none;
+        }
+
+        .zoom-result {
+          position: absolute;
+          top: 0;
+          left: 460px;
+          width: 500px;
+          height: 500px;
+          background-repeat: no-repeat;
+          border: 1px solid #8b8b8b;
+          display: none;
+        }
+      }
+
+      .active {
+        .zoom-lens {
+          display: block;
+        }
+
+        .zoom-result {
+          display: block;
+        }
+      }
+    }
+
+    .content {
+      margin-left: 20px;
+      display: flex;
+      flex-direction: column;
+
+      p {
+        font-size: 1.2vw;
+      }
+
+      .price {
+        font-weight: 600;
+        font-size: 24px;
+        color: var(--color-blue-3set);
+        margin: 10px 0;
+      }
+
+      .desc {
+        margin: 10px 0;
+        font-size: 1.2vw;
+      }
+
+      .count {
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+
+        button {
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+
+  .card {
+    margin-top: 20px;
+    padding: 20px;
+
+    p {
+      font-size: 1.4vw;
+    }
+
+    .review {
+      margin-bottom: 3rem;
+      border-top: .4px solid var(--color-dark-gray);
+
+      p {
+        font-size: 1.4vw;
+        margin: 20px 0;
+      }
+
+      span b {
+        font-size: 1.1vw;
+      }
+    }
+  }
+}

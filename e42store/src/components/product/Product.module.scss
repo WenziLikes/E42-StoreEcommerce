@@ -1,0 +1,62 @@
+/* =========================================
+   Product Styles
+========================================= */
+.products {
+  display: flex;
+  margin-top: 140px;
+
+  .productList {
+    width: 80%;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .products {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+  }
+
+  .productFilter {
+    width: 20%;
+    margin-bottom: 20px; /* Add some spacing between filter and product list */
+  }
+
+  .productList {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .products {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+    width: 100%;
+  }
+
+  .productFilter {
+    width: 60%;
+    margin-bottom: 15px;
+  }
+
+  .productList {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .products {
+    margin-top: 60px;
+  }
+
+  .productFilter {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .productList {
+    width: 100%;
+  }
+}

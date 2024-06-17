@@ -1,0 +1,27 @@
+/* =========================================
+   Card Grid styles
+========================================= */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); /* Flexible number of columns */
+  gap: 20px; /* Distance between cards */
+  margin-top: 30px;
+  transition: grid-template-columns 0.3s ease;
+}
+
+/* Styles for grid mode */
+.grid {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+/* Styles for line mode */
+.line {
+  display: block;
+}
+
+/* Styles for children of line mode */
+.line > * {
+  display: inline-block;
+  width: 100%;
+  margin: 0 16px 16px 0; /* Top, right, bottom, left margins */
+}

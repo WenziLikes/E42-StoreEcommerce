@@ -1,0 +1,43 @@
+/* =========================================
+   Logo Styles
+========================================= */
+.logo {
+  //margin-top: 50px;
+  //display: flex;
+  //align-items: center;
+
+  a {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+    font-weight: 900;
+    font-size: 8rem;
+    text-transform: uppercase;
+    width: 25%;
+    color: var(--color-asfalt-3set);
+    cursor: pointer;
+    transition: font-size 0.3s ease, width 0.3s ease; /* Add smooth transition for resizing */
+
+    span {
+      display: inline-block;
+    }
+
+    p {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    margin-top: 12px;
+
+    a {
+      font-size: 2.8rem;
+      color: var(--color-light-blue-3set);
+
+      p {
+        color: var(--color-asfalt-3set);
+      }
+    }
+  }
+}

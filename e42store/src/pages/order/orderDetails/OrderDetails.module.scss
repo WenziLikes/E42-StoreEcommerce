@@ -1,0 +1,27 @@
+/* =========================================
+   Order Details Page Style
+========================================= */
+.back-to {
+  display: flex;
+  align-items: center;
+  padding: 10px 40px;
+
+  a {
+    color: var(--color-asfalt-3set);
+    font-size: 1.3vw;
+    position: relative;
+    font-weight: 200;
+    letter-spacing: .5px;
+    padding-right: 40px;
+    transition: padding-right 1s;
+
+    &:hover {
+      padding-right: 5px;
+      color: var(--color-blue-3set);
+    }
+  }
+
+  .icon {
+    color: var(--color-blue-3set);
+  }
+}

@@ -1,0 +1,65 @@
+/* =========================================
+   Loader Styles
+========================================= */
+// Variables
+$primary-color: #007DB6;
+$dot-colors: (
+        #008FB2 0.2s,
+        #009B9E 0.4s,
+        #00A77D 0.6s,
+        #00B247 0.8s,
+        #5AB027 1.0s,
+        #A0B61E 1.2s,
+);
+
+// Baseline styles
+.wrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9;
+  background: rgba(34, 34, 34, 0.89);
+  text-align: center;
+  padding: 20%;
+
+  .loader-title {
+    color: #ccc;
+    margin: 0;
+    font: .8em verdana;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: .1em;
+  }
+
+  // Loading Dots
+  .loading {
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      width: 2em;
+      height: 2em;
+      margin: .50em;
+      border-radius: .6em;
+      animation: loading 1s infinite alternate;
+
+      @each $dot-color in $dot-colors {
+        $color: nth($dot-color, 1);
+        $delay: nth($dot-color, 2);
+        &:nth-of-type(n) { /* Styles for all points */
+          background: $color;
+          animation-delay: $delay;
+        }
+      }
+    }
+  }
+}
+
+// Animation keyframes
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

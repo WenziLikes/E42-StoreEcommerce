@@ -1,0 +1,72 @@
+{
+  "name": "e42store",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emailjs/browser": "^4.3.3",
+    "@reduxjs/toolkit": "^2.2.3",
+    "@stripe/react-stripe-js": "^2.7.0",
+    "@stripe/stripe-js": "^3.3.0",
+    "@testing-library/jest-dom": "^6.4.5",
+    "@testing-library/react": "^15.0.6",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/classnames": "^2.3.1",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.8",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "chart.js": "^4.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "eslint-config-react-app": "^7.0.1",
+    "express": "^4.19.2",
+    "firebase": "^10.11.1",
+    "notiflix": "^3.2.7",
+    "react": "^18.3.1",
+    "react-chartjs-2": "^5.2.0",
+    "react-country-region-selector": "^3.6.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.2.0",
+    "react-redux": "^9.1.2",
+    "react-router-dom": "^6.23.0",
+    "react-scripts": "5.0.1",
+    "react-star-rate": "^0.2.0",
+    "react-toastify": "10.0.5",
+    "sass": "^1.76.0",
+    "stripe": "^15.5.0",
+    "swiper": "^11.1.1",
+    "typescript": "4.9.5",
+    "web-vitals": "^3.5.2"
+  },
+  "scripts": {
+    "start:frontend&backend": "nodemon server.js & react-scripts start",
+    "start:frontend": "node_modules/.bin/react-scripts start",
+    "start:backend": "nodemon server.js",
+    "start": "node server",
+    "build": "node_modules/.bin/react-scripts build",
+    "test": "node_modules/.bin/react-scripts test",
+    "eject": "node_modules/.bin/react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@types/react-scroll": "^1.8.10"
+  }
+}

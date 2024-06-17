@@ -1,0 +1,87 @@
+/* =========================================
+    Add Product
+========================================= */
+// Variables
+$product-card-width: 100%;
+$product-card-padding: 30px;
+$product-form-width: 100%;
+$light-blue: var(--light-blue);
+
+// Add Product Card
+.add-product {
+  // Add Product Form
+  form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: $product-form-width;
+
+    .left {
+      width: 36%;
+    }
+
+    .right {
+      width: 50%;
+    }
+
+    fieldset {
+      margin-bottom: 20px;
+      padding: 16px;
+      border: .004px solid rgba(148, 148, 148, 0.43);
+      border-radius: 5px;
+
+      legend {
+        padding: 0 5px;
+        font-weight: 500;
+        font-size: 16px;
+      }
+
+      // Group inside Fieldset
+      .group {
+        .progress {
+          border: 1px solid transparent;
+          border-radius: 10px;
+
+          .progress-bar {
+            margin-bottom: 5px;
+            background-color: $light-blue;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: .2rem 1rem;
+          }
+        }
+      }
+    }
+
+    input, select, textarea {
+      border: .004px solid rgba(148, 148, 148, 0.43);
+
+      &:focus {
+        box-shadow: 0 0 4px 1px var(--color-primary-violet);
+      }
+    }
+
+    label {
+      display: block;
+      margin: 0 0 10px;
+    }
+
+    select {
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 300px;
+      resize: none;
+    }
+
+    button {
+      margin-top: 2rem;
+      width: 50%;
+    }
+  }
+}
