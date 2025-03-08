@@ -1,6 +1,7 @@
 /* =========================================
    Loader Styles
 ========================================= */
+@use "sass:list";
 // Variables
 $primary-color: #007DB6;
 $dot-colors: (
@@ -43,8 +44,8 @@ $dot-colors: (
       animation: loading 1s infinite alternate;
 
       @each $dot-color in $dot-colors {
-        $color: nth($dot-color, 1);
-        $delay: nth($dot-color, 2);
+        $color: list.nth($dot-color, 1);
+        $delay: list.nth($dot-color, 2);
         &:nth-of-type(n) { /* Styles for all points */
           background: $color;
           animation-delay: $delay;

@@ -37,6 +37,7 @@
     font-size: 32px;
     cursor: pointer;
     transition: color 1s ease;
+
     &:hover {
       color: var(--color-blue-3set);
     }
@@ -57,7 +58,7 @@
 }
 
 @media (max-width: 768px) {
-  .contact-form{
+  .contact-form {
     width: 90%;
     bottom: 100px;
   }

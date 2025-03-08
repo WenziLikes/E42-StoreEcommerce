@@ -8,21 +8,20 @@ interface IAdminOnlyRoute {
 }
 
 const AdminOnlyRoute: FC<IAdminOnlyRoute> = ({children}) => {
-
     const userEmail = useAppSelector(selectEmail)
-    if (userEmail === process.env.REACT_APP_ADMIN_USER) {
+
+    if (userEmail === import.meta.env.VITE_ADMIN_USER) {
         return children
     }
+
     return (
         <section style={{height: "80vh"}}>
             <div className="container">
                 <h2>Permission Denied</h2>
-                <p>This page can only by view by an Admin user</p>
+                <p>This page can only be viewed by an Admin user</p>
                 <br/>
                 <Link to="/">
-                    <button>
-                        &larr; Back To Home
-                    </button>
+                    <button>&larr Back To Home</button>
                 </Link>
             </div>
         </section>
@@ -30,11 +29,12 @@ const AdminOnlyRoute: FC<IAdminOnlyRoute> = ({children}) => {
 }
 
 export const AdminOnlyLink: FC<IAdminOnlyRoute> = ({children}) => {
-
     const userEmail = useAppSelector(selectEmail)
-    if (userEmail === process.env.REACT_APP_ADMIN_USER) {
+
+    if (userEmail === import.meta.env.VITE_ADMIN_USER) {
         return children
     }
+
     return null
 }
 

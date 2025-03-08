@@ -1,4 +1,4 @@
-import React, {FC} from "react"
+import React, {FC, useCallback} from "react"
 import styles from "./ProductItem.module.scss"
 import {Button, Card, CustomLink} from "../../index"
 import {Product} from "../../../product.type"
@@ -15,22 +15,20 @@ const ProductItem: FC<ProductItemProps> = ({grid, product}) => {
         id,
         name,
         price,
-        desc,
+        desc = "", // ✅ Prevents an error if `Desc` is absent
         imageURL,
     } = product
+
     const dispatch = useAppDispatch()
 
     const shortenText = (text: string, n: number) => {
-        if (text.length > n) {
-            return text.substring(0, 10).concat("...")
-        }
-        return text
+        return text.length > n ? text.substring(0, n).concat("...") : text
     }
 
-    const addToCart = (product: Product) => {
+    const addToCart = useCallback(() => {
         dispatch(ADD_TO_CART(product))
         dispatch(CALCULATE_TOTAL_QUANTITY())
-    }
+    }, [dispatch, product]) // ✅ Optimized with `usecallback ()`
 
     return (
         <Card className={styles.productItem} height={grid ? "355px" : "400px"} column>
@@ -42,10 +40,11 @@ const ProductItem: FC<ProductItemProps> = ({grid, product}) => {
             <div className={styles.content}>
                 <div className={styles.details}>
                     <p>{`$${price}`}</p>
-                    <h4>{shortenText(name, 10)}</h4>
+                    <h4>{shortenText(name, 12)}</h4> {/* ✅ Increased the limit of symbols */}
                 </div>
-                {!grid && <p className={styles.desc}>{shortenText(`${desc}`, 200)}</p>}
-                <Button width={grid ? "50%" : "30%"} onClick={() => addToCart(product)}>Add To Cart</Button>
+                {!grid && <p className={styles.desc}>{shortenText(desc, 200)}</p>}
+                <Button width={grid ? "50%" : "30%"} onClick={addToCart}>Add To
+                    Cart</Button> {/* ✅ Optimized `OnClick` */}
             </div>
         </Card>
     )

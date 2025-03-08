@@ -13,7 +13,7 @@ import {
 import {selectEmail} from "../../redux/slice/authSlice"
 import {selectBillingAddress, selectShippingAddress} from "../../redux/slice/checkoutSlice"
 
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PK!)
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PK!)
 
 const Checkout: FC = () => {
     const [message, setMessage] = useState<string>("Initializing checkout...")
@@ -27,6 +27,7 @@ const Checkout: FC = () => {
     const billingAddress = useAppSelector(selectBillingAddress)
 
     const dispatch = useAppDispatch()
+
     useEffect(() => {
         dispatch(CALCULATE_SUBTOTAL())
         dispatch(CALCULATE_TOTAL_QUANTITY())
@@ -35,9 +36,6 @@ const Checkout: FC = () => {
     const description = `E42 Shop payment: email: ${customerEmail}, Amount: ${totalAmount}`
 
     useEffect(() => {
-        // http://localhost:4242/create-payment-intent
-        // https://eshop-react-firebase.herokuapp.com/create-payment-intent
-        // Create PaymentIntent as soon as the page loads
         fetch("http://localhost:4242/create-payment-intent", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
@@ -63,7 +61,7 @@ const Checkout: FC = () => {
                 setMessage("Failed to initialize checkout")
                 toast.error("Something went wrong!!!")
             })
-    }, [cartItems, customerEmail, shippingAddress, billingAddress])
+    }, [cartItems, customerEmail, shippingAddress, billingAddress, description])
 
     const options: StripeElementsOptions = {
         clientSecret,

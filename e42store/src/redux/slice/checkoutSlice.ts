@@ -14,7 +14,7 @@ interface CheckoutState {
     billingAddress: Address | {}
 }
 
-const initialState: CheckoutState= {
+const initialState: CheckoutState = {
     shippingAddress: {},
     billingAddress: {},
 }

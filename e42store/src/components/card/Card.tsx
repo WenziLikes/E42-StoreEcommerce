@@ -7,11 +7,11 @@ interface CardProps {
     height?: string
     maxHeight?: string
     maxWidth?: string
-    width?: string  
-    column?: boolean 
+    width?: string
+    column?: boolean
 }
 
-const Card: FC<CardProps> = ({ children, className = "", height,maxHeight, width,maxWidth, column = false }) => {
+const Card: FC<CardProps> = ({children, className = "", height, maxHeight, width, maxWidth, column = false}) => {
     const cardStyle: CSSProperties = {
         height: height || "auto",
         maxHeight: maxHeight || "auto",

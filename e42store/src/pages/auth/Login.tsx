@@ -107,7 +107,7 @@ const Login = () => {
                             </Button>
                             {/* Todo Apple with Sign In, Remember!!!! */}
                             <span>
-                            <p>Don"t have an account?
+                            <p>Don't have an account?
                                 <CustomLink to="/register">Sign up for here</CustomLink>
                             </p>
                         </span>

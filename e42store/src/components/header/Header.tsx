@@ -4,7 +4,7 @@ import {AdminLinkButton, Logo, ShoppingCart} from "./index"
 import {useLocation, useNavigate} from "react-router-dom"
 import {onAuthStateChanged, signOut} from "firebase/auth"
 import {toast} from "react-toastify"
-import ShowOnLogin, {ShowOnLogout} from "./hiddenLink/HiddenLink"
+import {ShowOnLogin, ShowOnLogout} from "./hiddenLink/HiddenLink"
 import {CustomNavLink} from "./../index"
 import {FaTimes} from "react-icons/fa"
 import {useAppDispatch, useAppSelector} from "../../redux/hooks"
@@ -36,7 +36,7 @@ const Header: FC = () => {
 
     useEffect(() => {
         dispatch(CALCULATE_TOTAL_QUANTITY())
-    }, [])
+    }, [dispatch])
 
     /** Monitor currently sign in user */
     useEffect(() => {
@@ -93,7 +93,7 @@ const Header: FC = () => {
 
                     <li>
                         {/*Admin panel */}
-                        {location.pathname === "/"? null : <AdminLinkButton/>}
+                        {location.pathname === "/" ? null : <AdminLinkButton/>}
 
                     </li>
                 </ul>

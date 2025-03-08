@@ -87,7 +87,9 @@ const ViewProducts: FC = () => {
                 <p>
                     <b>{filteredProducts.length}</b> products found
                 </p>
-                <Search value={search} onChange={(e: { target: { value: React.SetStateAction<string> } }) => setSearch(e.target.value)}/>
+                <Search value={search} onChange={(e: {
+                    target: { value: React.SetStateAction<string> }
+                }) => setSearch(e.target.value)}/>
             </div>
             {filteredProducts.length === 0 ? (
                 <p className={styles["not-found"]}>No product found.</p>

@@ -107,7 +107,7 @@ const Slider = () => {
                             </div>
                             <div className="content-right">
                                 <h4 className="title">{slide.heading}</h4>
-                                <p className="sub-title">Here"s more info</p>
+                                <p className="sub-title">Here's more info</p>
                                 <span className="caption">{slide.subHeading}</span>
                                 <Link to="/login" rel="noreferrer noopener">
                                     Buy now

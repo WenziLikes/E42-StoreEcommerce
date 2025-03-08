@@ -1,25 +1,17 @@
-import {FC, JSX} from "react"
-import {useAppSelector} from "../../../../../e42store/src/redux/hooks"
-import {selectIsLoggedIn} from "../../../../../e42store/src/redux/slice/authSlice"
+import {FC, ReactNode} from "react"
+import {useAppSelector} from "../../../redux/hooks"
+import {selectIsLoggedIn} from "../../../redux/slice/authSlice"
 
-type ShowOnLogin = {
-    children: JSX.Element
+type ShowOnLoginProps = {
+    children: ReactNode
 }
 
-const ShowOnLogin: FC<ShowOnLogin> = ({children}) => {
+export const ShowOnLogin: FC<ShowOnLoginProps> = ({children}) => {
     const isLoggedIn = useAppSelector(selectIsLoggedIn)
-    if (isLoggedIn) {
-        return children
-    }
-    return null
+    return isLoggedIn ? <>{children}</> : null
 }
 
-export const ShowOnLogout: FC<ShowOnLogin> = ({children}) => {
+export const ShowOnLogout: FC<ShowOnLoginProps> = ({children}) => {
     const isLoggedIn = useAppSelector(selectIsLoggedIn)
-    if (!isLoggedIn) {
-        return children
-    }
-    return null
+    return !isLoggedIn ? <>{children}</> : null
 }
-
-export default ShowOnLogin

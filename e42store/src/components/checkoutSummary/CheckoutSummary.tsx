@@ -33,10 +33,10 @@ const CheckoutSummary = () => {
 
                             return (
                                 <Card key={id} className={styles.card} width={"500px"} column>
-                                        <h4>Product: {name}</h4>
-                                        <p>Quantity: {cartQuantity}</p>
-                                        <p>Unit price: {price}</p>
-                                        <p>Set price: {price * cartQuantity}</p>
+                                    <h4>Product: {name}</h4>
+                                    <p>Quantity: {cartQuantity}</p>
+                                    <p>Unit price: {price}</p>
+                                    <p>Set price: {price * cartQuantity}</p>
                                 </Card>
                             )
                         })}

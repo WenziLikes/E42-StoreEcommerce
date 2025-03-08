@@ -34,7 +34,7 @@ const ScrollToTarget: FC<ScrollToTargetProps> = ({targetId, scrollOffset = 0, ch
         if (loaded && location.hash === `#${targetId}`) {
             scrollToElement()
         }
-    }, [loaded, location.hash, scrollToElement,targetId])
+    }, [loaded, location.hash, scrollToElement, targetId])
 
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault()

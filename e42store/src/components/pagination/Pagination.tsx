@@ -62,6 +62,7 @@ const Pagination: FC<PaginationProps> = ({
                             </li>
                         )
                     }
+                    return null; // ✅ added return null
                 }
             )}
             <li onClick={paginateNext}

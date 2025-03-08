@@ -32,12 +32,14 @@
 
 @media (max-width: 800px) {
   .shopping-cart {
-    a{
+    a {
       font-size: 3vw;
     }
+
     .menu-icon {
       display: flex;
       font-size: 8vw;
+
       > * {
         margin-left: 2rem;
       }

@@ -25,7 +25,7 @@ const CheckoutDetails: React.FC = () => {
     const navigate = useNavigate()
 
     const handleAddress = (e: {
-        target: { name: string ,value: string }
+        target: { name: string, value: string }
     }, setAddress: React.Dispatch<React.SetStateAction<ShippingAddressState>>) => {
         const {name, value} = e.target
         setAddress(prevState => ({

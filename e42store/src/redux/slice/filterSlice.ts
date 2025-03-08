@@ -1,89 +1,78 @@
-import {createSlice} from "@reduxjs/toolkit"
+import {createSlice, PayloadAction} from "@reduxjs/toolkit"
 import {FilterState, Product} from "../../product.type"
 
 enum SortType {
-    Latest = 'latest',
-    LowestPrice = 'lowest-price',
-    HighestPrice = 'highest-price',
-    Ascending = 'a-z',
-    Descending = 'z-a'
+    Latest = "latest",
+    LowestPrice = "lowest-price",
+    HighestPrice = "highest-price",
+    Ascending = "a-z",
+    Descending = "z-a",
 }
 
 enum CategoryType {
-    AllCategory = 'All Category',
-    // ... rest of the category types
+    AllCategory = "All Category",
+    // ... остальные категории
 }
 
 enum BrandType {
-    AllBrands = 'All Brands',
-    // ... rest of the brand types
+    AllBrands = "All Brands",
+    // ... остальные бренды
 }
 
 const initialState: FilterState = {
-    filteredProducts: []
+    filteredProducts: [],
 }
 
 const filterSlice = createSlice({
     name: "filter",
     initialState,
     reducers: {
-        FILTER_BY_SEARCH: (state, action) => {
+        FILTER_BY_SEARCH: (state, action: PayloadAction<{ products: Product[]; search: string }>) => {
             const {products, search} = action.payload
             state.filteredProducts = products.filter(
-                (product: { name: string; category: string }) =>
+                (product) =>
                     product.name.toLowerCase().includes(search.toLowerCase()) ||
                     product.category.toLowerCase().includes(search.toLowerCase())
             )
         },
-        SORT_PRODUCTS: (state, action) => {
+        SORT_PRODUCTS: (state, action: PayloadAction<{ products: Product[]; sort: SortType }>) => {
             const {products, sort} = action.payload
-            let tempProducts: Product[] = []
-            switch (sort) {
-                case SortType.Latest:
-                    tempProducts = products
-                    break
-                case SortType.LowestPrice:
-                    tempProducts = products.slice().sort((a: { price: number }, b: { price: number }) => a.price - b.price)
-                    break
-                case SortType.HighestPrice:
-                    tempProducts = products.slice().sort((a: { price: number }, b: { price: number }) => b.price - a.price)
-                    break
-                case SortType.Ascending:
-                    tempProducts = products.slice().sort((a: { name: string }, b: { name: string }) => a.name.localeCompare(b.name))
-                    break
-                case SortType.Descending:
-                    tempProducts = products.slice().sort((a: { name: any }, b: { name: string }) => b.name.localeCompare(a.name))
-                    break
-                default:
-                    break
+
+            if (sort === SortType.Latest) {
+                state.filteredProducts = products
+                return
             }
-            state.filteredProducts = tempProducts
+
+            state.filteredProducts = [...products].sort((a, b) => {
+                switch (sort) {
+                    case SortType.LowestPrice:
+                        return a.price - b.price
+                    case SortType.HighestPrice:
+                        return b.price - a.price
+                    case SortType.Ascending:
+                        return a.name.localeCompare(b.name)
+                    case SortType.Descending:
+                        return b.name.localeCompare(a.name)
+                    default:
+                        return 0
+                }
+            })
         },
-        FILTER_BY_CATEGORY: (state, action) => {
+        FILTER_BY_CATEGORY: (state, action: PayloadAction<{ products: Product[]; category: string }>) => {
             const {products, category} = action.payload
-            let tempProducts: Product[]
-            if (category === CategoryType.AllCategory) {
-                tempProducts = products
-            } else {
-                tempProducts = products.filter((product: { category: string }) => product.category === category)
-            }
-            state.filteredProducts = tempProducts
+            state.filteredProducts = category === CategoryType.AllCategory
+                ? products
+                : products.filter((product) => product.category === category)
         },
-        FILTER_BY_BRAND: (state, action) => {
+        FILTER_BY_BRAND: (state, action: PayloadAction<{ products: Product[]; brand: string }>) => {
             const {products, brand} = action.payload
-            let tempProducts: Product[]
-            if (brand === BrandType.AllBrands) {
-                tempProducts = products
-            } else {
-                tempProducts = products.filter((product: { brand: string }) => product.brand === brand)
-            }
-            state.filteredProducts = tempProducts
+            state.filteredProducts = brand === BrandType.AllBrands
+                ? products
+                : products.filter((product) => product.brand === brand)
         },
-        FILTER_BY_PRICE: (state, action) => {
+        FILTER_BY_PRICE: (state, action: PayloadAction<{ products: Product[]; price: number }>) => {
             const {products, price} = action.payload
-            let tempProducts: Product[]
-            tempProducts = products.filter((product: { price: number }) => product.price <= price)
-            state.filteredProducts = tempProducts
+            state.filteredProducts = products.filter((product) => product.price <= price)
         },
     },
 })
@@ -93,7 +82,7 @@ export const {
     SORT_PRODUCTS,
     FILTER_BY_CATEGORY,
     FILTER_BY_BRAND,
-    FILTER_BY_PRICE
+    FILTER_BY_PRICE,
 } = filterSlice.actions
 
 export const selectFilteredProducts = (state: { filter: FilterState }) => state.filter.filteredProducts

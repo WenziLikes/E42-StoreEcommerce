@@ -1,14 +1,30 @@
 # e42sto®e 💻
 
-e42store is a web application designed to provide an e-commerce platform with various functionalities, including user
-authentication, payment processing, data visualization, and more. The project uses a combination of frontend and backend
-technologies to deliver a seamless shopping experience.
+e42store is a modern e-commerce web application providing seamless shopping experiences,
+featuring user authentication, payment processing, real-time data visualization, and a robust backend.
+The project utilizes cutting-edge technologies such as React, Vite, Express,
+and Stripe for efficient performance and scalability.
 
 ![Описание картинки](doc/Doc.png)
 
 <img src="doc/Login.png" alt="Скриншот приложения" width="280"> <img src="doc/Filter.png" alt="Скриншот приложения" width="280"> <img src="doc/Pay.png" alt="Скриншот приложения" width="246">
 
-## Table of Contents 🧾
+---
+
+## 🚀 Latest Updates & Enhancements
+
+- **Added Helmet.js for improved security by setting Content Security Policy (CSP)** and other security headers.
+- **Migrated from Create React App (CRA) to Vite** for faster build times and optimized performance.
+- **Improved ESM (ECMAScript Modules) support** in the backend for compatibility with modern Node.js environments.
+- **Fixed deprecated Sass functions** (`nth()` replaced with `list.nth()`).
+- **Updated environment variable handling** (`import.meta.env` → `process.env`) for better security and compatibility.
+- **Enhanced Stripe API integration**, explicitly defining API version (`2023-10-16`).
+- **Enabled automatic browser opening in macOS** when running `npm run dev`.
+- **Refactored backend code** for improved efficiency and maintainability.
+
+---
+
+## 📌 Table of Contents
 
 1. [Project Structure](#project-structure)
 2. [Dependencies](#dependencies)
@@ -21,92 +37,76 @@ technologies to deliver a seamless shopping experience.
 9. [Contributing](#contributing)
 10. [License](#license)
 
-## Project Structure 🌿
+---
 
-The project consists of the following main directories and files:
+## 🌿 Project Structure
 
 ### `public/`
 
-This directory contains static files such as HTML, images, and other assets.
-
-- `favicon.ico`: Icon displayed in the browser tab.
-- `index.html`: Main HTML file.
-- `logo192.png`: 192x192 logo image.
-- `logo512.png`: 512x512 logo image.
+Contains static assets such as images, icons, and the main HTML file.
 
 ### `src/`
 
-This directory contains the main frontend code, including React components, Redux slices, and other related files.
+Contains the frontend application, including:
 
-- `.tsx`: TypeScript React components.
-- `assets/`: Assets used in the application.
-- `components/`: Reusable React components.
-- `customHooks/`: Custom React hooks.
-- `declarations.d.ts`: TypeScript declaration file.
-- `firebase/`: Firebase configuration and utilities.
-- `index.scss`: Main SCSS stylesheet.
-- `index.tsx`: Entry point for the React application.
-- `pages/`: React components for different pages.
-- `product.type.ts`: TypeScript type definitions for products.
-- `redux/`: Redux slices and store configuration.
-- `route/`: Route definitions for the application.
+- **Components**: Reusable React UI components.
+- **Redux**: State management logic.
+- **Pages**: Full-page components for different routes.
+- **Styles**: Global and modular SCSS stylesheets.
+- **Hooks**: Custom React hooks for better code reuse.
 
 ### `server.js`
 
-This file contains the setup for the Express server.
+Node.js/Express backend handling API requests, payment processing, and middleware.
 
 ### `package.json`
 
-This file contains the project configuration and dependencies.
+Manages dependencies, scripts, and project metadata.
 
-### `package-lock.json`
+---
 
-## Dependencies ⬇︎
+---
+
+## 📦 Dependencies
 
 ### Frontend Dependencies
 
-- **React**: A JavaScript library for building user interfaces.
-- **React-DOM**: Serves as the entry point to the DOM and server renderers for React.
-- **React-Redux**: Official React bindings for Redux.
-- **React-Router-DOM**: Declarative routing for React applications.
-- **React-Scripts**: Scripts and configuration used by Create React App.
-- **Chart.js**: Simple yet flexible JavaScript charting for designers & developers.
-- **React-Chartjs-2**: React wrapper for Chart.js.
-- **React-Icons**: Include popular icons in your React projects easily.
-- **React-Country-Region-Selector**: A component for selecting countries and regions.
-- **React-Toastify**: For displaying beautiful notifications.
-- **React-Star-Rate**: Component for star ratings.
-- **Swiper**: Modern mobile touch slider.
-- **Firebase**: JavaScript library for Firebase.
-- **Stripe**: JavaScript library for Stripe.
-- **@stripe/react-stripe-js**: React components for Stripe.js.
-- **@stripe/stripe-js**: Load Stripe.js.
+- **React** - JavaScript library for building UI components.
+- **React-DOM** - Serves as the entry point for rendering React components into the DOM.
+- **React-Redux** - Official bindings for Redux in React applications.
+- **React-Router-DOM** - Declarative routing for React applications.
+- **Chart.js** - Simple yet flexible JavaScript charting library.
+- **React-Chartjs-2** - React wrapper for Chart.js.
+- **Swiper** - Modern mobile touch slider.
+- **React-Icons** - Include popular icons in React projects easily.
+- **React-Toastify** - Beautiful notifications for React applications.
+- **Firebase** - Platform for real-time data and authentication.
+- **Stripe** - Payment processing service.
+- **@stripe/react-stripe-js** - React components for Stripe.js.
+- **@stripe/stripe-js** - Stripe.js JavaScript SDK.
+- **Sass** - CSS extension language for styling.
+- **classnames** - Utility for conditionally joining classNames in React components.
+- **dotenv** - Module to load environment variables from a `.env` file.
 
-### Backend Dependencies
+### Backend
 
-- **Express**: Fast, unopinionated, minimalist web framework for Node.js.
-- **Cors**: Middleware for enabling CORS (Cross-Origin Resource Sharing).
-- **Dotenv**: Loads environment variables from a `.env` file.
-- **Stripe**: Node.js library for Stripe.
+- **Express**, **Cors**, **Dotenv**, **Stripe** (`apiVersion: '2023-10-16'`)
 
-### Development Dependencies
+### Development Tools
 
-- **Nodemon**: Utility that monitors for any changes in your source and automatically restarts your server.
-- **Typescript**: Typed JavaScript at Any Scale.
-- **Sass**: CSS extension language.
-- **ESLint**: Pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript.
-- **@babel/plugin-proposal-private-property-in-object**: Babel plugin for private properties in objects.
-- **@types**: TypeScript definitions for various libraries.
+- **Vite** (replaces CRA for better performance)
+- **Nodemon**, **Typescript**, **ESLint**, **Prettier**
 
-## Scripts
+---
 
-- **start:frontend&backend**: Starts both the frontend and backend concurrently.
-- **start:frontend**: Starts only the frontend.
-- **start:backend**: Starts only the backend.
-- **start**: Starts the backend server.
-- **build**: Builds the React app for production.
-- **test**: Runs the test suite.
-- **eject**: Ejects the configuration from Create React App.
+## 📜 Scripts
+
+- **`npm run dev`** - Starts the frontend (automatically opens in Chrome on macOS).
+- **`npm run build`** - Builds the frontend for production.
+- **`npm run start:backend`** - Runs the Express server with nodemon.
+- **`npm run lint`** - Runs ESLint for code quality checks.
+
+---
 
 ## Configuration
 
@@ -122,66 +122,31 @@ REACT_APP_FIREBASE_PROJECT_ID=your_firebase_project_id
 REACT_APP_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
 REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
 REACT_APP_FIREBASE_APP_ID=your_firebase_app_id
-REACT_APP_STRIPE_PUBLIC_KEY=your_stripe_public_key
+
 STRIPE_SECRET_KEY=your_stripe_secret_key
+
+VITE_STRIPE_PK=your_stripe_public_key
+VITE_ADMIN_USER=your_admin_email
+VITE_FB_API_KEY=your_firebase_api_key
+VITE_EMAIL_JS_SERVICE_ID=your_emailjs_service_id
+VITE_EMAIL_JS_TEMPLATE_ID=your_emailjs_template_id
+VITE_EMAIL_JS_PUBLIC_KEY=your_emailjs_public_key
+
+NODE_ENV=development
+PORT=4242
 ```
 
-## Usage
+---
+
+## 🛠️ Usage
 
 To run the project locally:
 
-1. Clone the repository:
-
-```
+```bash
 git clone https://github.com/yourusername/e42store.git
-      cd e42store
-```
-
-2. Install dependencies:
-
-```
+cd e42store
 npm install
-```
-
-3. Create a .env file in the root directory and add your environment variables.
-4. Start the development server:
-
-```
-npm run start:frontend&backend
-```
-
-## Development
-
-### Frontend
-
-The frontend of the project is built using React. To start the frontend development server:
-
-```
-npm run start:frontend
-```
-
-### Backend
-
-The backend of the project is built using Express. To start the backend server:
-
-```
-npm run start:backend
-```
-
-## Build
-
-To create a production build of the frontend:
-
-```
-npm run build
-```
-
-## Testing
-
-To run the test suite:
-
-```
-npm run test
+npm run dev
 ```
 
 ## Contributing
@@ -196,7 +161,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 This README provides a comprehensive overview of the e42store project, including its structure,
 dependencies, scripts, and more.
-
-```
-This README provides a comprehensive overview of the e42store project, including its structure, dependencies, scripts, and more.
-```

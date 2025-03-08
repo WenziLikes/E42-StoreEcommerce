@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useEffect, useRef, useState } from "react"
+import React, {FC, ReactNode, useEffect, useRef, useState} from "react"
 import styles from "./Accordion.module.scss"
 
 interface AccordionProps {
@@ -6,7 +6,7 @@ interface AccordionProps {
     children: ReactNode
 }
 
-const Accordion: FC<AccordionProps> = ({ title, children }) => {
+const Accordion: FC<AccordionProps> = ({title, children}) => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const contentRef = useRef<HTMLDivElement | null>(null)
     const uniqueId = useRef(`accordion-trigger-${Math.random().toString(36).slice(2, 9)}`).current
@@ -17,7 +17,7 @@ const Accordion: FC<AccordionProps> = ({ title, children }) => {
 
     useEffect(() => {
         if (isOpen && contentRef.current) {
-            contentRef.current.scrollIntoView({ behavior: "smooth" })
+            contentRef.current.scrollIntoView({behavior: "smooth"})
         }
     }, [isOpen])
 
@@ -36,8 +36,10 @@ const Accordion: FC<AccordionProps> = ({ title, children }) => {
                 <div className={styles["accordion__content"]}>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit
                         esse cillum dolore eu fugiat nulla pariatur.
                     </p>
                     {children}

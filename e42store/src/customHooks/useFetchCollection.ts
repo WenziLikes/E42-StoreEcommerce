@@ -1,15 +1,14 @@
-import { collection, onSnapshot, orderBy, query } from "firebase/firestore"
-import {useEffect, useState} from "react"
+import {collection, onSnapshot, orderBy, query} from "firebase/firestore"
+import {useCallback, useEffect, useState} from "react"
 import {toast} from "react-toastify"
-import { db } from "../firebase/config"
+import {db} from "../firebase/config"
 
 const useFetchCollection = (collectionName: string) => {
 
-    // Todo fix Any type
     const [data, setData] = useState<any[]>([])
     const [isLoading, setIsLoading] = useState(false)
 
-    const getCollection = () => {
+    const getCollection = useCallback(() => {
         setIsLoading(true)
 
         try {
@@ -28,16 +27,13 @@ const useFetchCollection = (collectionName: string) => {
             setIsLoading(false)
             toast.error(error.message)
         }
-    }
+    }, [collectionName]) // `usCallback` now tracks only` CollectionName`
 
     useEffect(() => {
         getCollection()
-    }, [])
+    }, [getCollection])
 
-    return {
-        data,
-        isLoading
-    }
+    return {data, isLoading}
 }
 
 export default useFetchCollection
